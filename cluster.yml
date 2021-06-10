@@ -1,0 +1,14 @@
+nodes:
+  - address: 192.168.86.71
+    user: ubuntu
+    role: [controlplane, etcd, worker]
+
+network:
+  plugin: calico
+
+# Required for external TLS termination with
+# ingress-nginx v0.22+
+ingress:
+  provider: nginx
+  options:
+    use-forwarded-headers: "true"
