@@ -13,9 +13,9 @@ network:
         wlan0:
             addresses:
                 - 192.168.86.71/24
-            gateway4: 192.168.1.1
+            gateway4: 192.168.86.1
             nameservers:
-                addresses: [8.8.8.8,8.8.4.4]
+                addresses: [8.8.8.8, 8.8.4.4]
             optional: true
             access-points:
                 WIFI_HERE:
