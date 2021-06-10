@@ -21,7 +21,8 @@
         1. sudo snap install kubectl --classic
         1. Reboot 
     4. docker (med https://www.docker.com/blog/getting-started-with-docker-for-arm-on-linux/ ) 
-    5. rke
+        1. ubuntu-bruger skal tilføjes til docker `usermod -aG docker <user_name>` ( https://rancher.com/docs/rke/latest/en/os/ )
+    6. rke
         1. Find download link ved at gå ind på en release (f.eks. https://github.com/rancher/rke/releases/tag/v1.2.8 )
         1. Højre klik på den version der passer til maskinen, og kopier link
         1. wget i terminal på det downloadede
