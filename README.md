@@ -20,7 +20,7 @@
         1. sudo apt upgrade 
         1. sudo snap install kubectl --classic
         1. Reboot 
-    4. docker (med apt install docker.io) 
+    4. docker (med https://www.docker.com/blog/getting-started-with-docker-for-arm-on-linux/ ) 
     5. rke
         1. Find download link ved at gå ind på en release (f.eks. https://github.com/rancher/rke/releases/tag/v1.2.8 )
         1. Højre klik på den version der passer til maskinen, og kopier link
