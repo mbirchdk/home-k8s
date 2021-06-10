@@ -7,8 +7,10 @@
     1. Vælg SD-kortet
     1. Write
 1. Configurer netværks-indstillinger.
-    1. Se `network-config` fil her i repositoriet
-    1. Indsæt wifi navn og password
+    1. Kør `ipconfig` og find gateway ip
+    2. Find `network-config` fil her i repositoriet
+    3. Indsæt wifi navn og password samt den gateway du fandt fra forrige trin
+    4. Kopier indholdet af den fil du har tilpasset, over i `network-config` på SD-kortet
 1. Indsæt SD-kort i RaspberryPie
 
 1. Log ind på servere med password `ubuntu` og bruger `ubuntu`
