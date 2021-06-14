@@ -4,7 +4,7 @@ nodes:
     role: [controlplane, etcd, worker]
 
 network:
-  plugin: calico
+  plugin: flannel
 
 # Required for external TLS termination with
 # ingress-nginx v0.22+
