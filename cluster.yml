@@ -1,5 +1,5 @@
 nodes:
-  - address: 192.168.86.71
+  - address: 192.168.86.72
     user: ubuntu
     role: [controlplane, etcd, worker]
 
