@@ -10,7 +10,7 @@ spec:
       paths:
       - backend:
           service:
-            name: mbirchwebsite
+            name: mbirchwebsite-svc
             port:
               number: 80
         pathType: ImplementationSpecific

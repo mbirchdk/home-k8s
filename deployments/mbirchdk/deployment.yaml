@@ -1,8 +1,8 @@
-piVersion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    workload.user.cattle.io/workloadselector: deployment-default-mbirchwebsite
+    app.kubernetes.io/name: mbirchwebsite
   name: mbirchwebsite
   namespace: mbirchdk
 spec:
@@ -11,7 +11,7 @@ spec:
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      workload.user.cattle.io/workloadselector: deployment-default-mbirchwebsite
+      app.kubernetes.io/name: mbirchwebsite
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -20,7 +20,7 @@ spec:
   template:
     metadata:
       labels:
-        workload.user.cattle.io/workloadselector: deployment-default-mbirchwebsite
+        app.kubernetes.io/name: mbirchwebsite
     spec:
       containers:
       - image: mbirch/cvwebsite:dev
