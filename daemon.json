@@ -1,5 +1,4 @@
 {
-  "graph" : "/mnt/external1/docker",
   "data-root" : "/mnt/external1/docker",
   "log-driver" : "json-file",
   "log-opts" : {
