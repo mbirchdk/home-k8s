@@ -19,16 +19,22 @@ spec:
       - name: home-assistant
         image: homeassistant/home-assistant:2021.11
         imagePullPolicy: IfNotPresent
+        securityContext:
+          privileged: true
         ports:
         - containerPort: 8123
           name: http
           protocol: TCP
+      volumeMounts:
+      - mountPath: /config 
+        name: configfolder
+      - mountPath: /media 
+        name: mediafolder
+
       volumes:
-      - hostPath:
+      - name: configfolder
+        hostPath:
           path: /home/ubuntu/home-assistant
-          type: ""
-        name: home-assistant
-      - hostPath:
+      - name: mediafolder
+        hostPath:
           path: /home/ubuntu/media
-          type: ""
-        name: home-assistant-media
