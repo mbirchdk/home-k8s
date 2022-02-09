@@ -15,6 +15,13 @@ spec:
       labels:
         app.kubernetes.io/name: home-assistant
     spec:
+      volumes:
+      - name: configfolder
+        hostPath:
+          path: /home/ubuntu/home-assistant
+      - name: mediafolder
+        hostPath:
+          path: /home/ubuntu/media
       containers:
       - name: home-assistant
         image: homeassistant/home-assistant:2021.11
@@ -25,16 +32,10 @@ spec:
         - containerPort: 8123
           name: http
           protocol: TCP
-      volumeMounts:
-      - mountPath: /config 
-        name: configfolder
-      - mountPath: /media 
-        name: mediafolder
+        volumeMounts:
+        - mountPath: /config 
+          name: configfolder
+        - mountPath: /media 
+          name: mediafolder
 
-      volumes:
-      - name: configfolder
-        hostPath:
-          path: /home/ubuntu/home-assistant
-      - name: mediafolder
-        hostPath:
-          path: /home/ubuntu/media
+      
