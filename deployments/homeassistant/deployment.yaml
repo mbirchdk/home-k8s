@@ -7,14 +7,13 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/instance: home-assistant-9-1623703175
       app.kubernetes.io/name: home-assistant
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: home-assistant
+        app.kubernetes.io/name: home-assistant
     spec:
       containers:
       - name: home-assistant
