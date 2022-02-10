@@ -5,7 +5,7 @@ metadata:
   namespace: funprojects
 spec:
   rules:
-  - host: mbirch.dk
+  - host: harmikkelhatpaa.birchen.tech
     http:
       paths:
       - backend:
