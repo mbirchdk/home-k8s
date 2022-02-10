@@ -19,14 +19,4 @@ spec:
     - mbirch.dk
     secretName: mbirch.dk
     
-  certificate:
-    mbirch.dk:
-      namespace: mbirchdk
-      spec:
-        secretName: mbirch.dk
-        issuerRef:
-          name: letsencrypt-prod
-          kind: ClusterIssuer
-          group: cert-manager.io
-        dnsNames:
-          - mbirch.dk
+  
