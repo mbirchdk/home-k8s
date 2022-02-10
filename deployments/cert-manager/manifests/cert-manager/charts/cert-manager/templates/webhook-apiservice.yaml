@@ -1,0 +1,22 @@
+---
+# Source: cert-manager/charts/cert-manager/templates/webhook-apiservice.yaml
+apiVersion: apiregistration.k8s.io/v1beta1
+kind: APIService
+metadata:
+  name: v1beta1.webhook.cert-manager.io
+  labels:
+    app: webhook
+    app.kubernetes.io/name: webhook
+    app.kubernetes.io/instance:  RELEASE-NAME
+    app.kubernetes.io/managed-by: Helm
+    helm.sh/chart: cert-manager-v0.11.0
+  annotations:
+    cert-manager.io/inject-ca-from-secret: "default/RELEASE-NAME-cert-manager-webhook-tls"
+spec:
+  group: webhook.cert-manager.io
+  groupPriorityMinimum: 1000
+  versionPriority: 15
+  service:
+    name: RELEASE-NAME-cert-manager-webhook
+    namespace: "default"
+  version: v1beta1
