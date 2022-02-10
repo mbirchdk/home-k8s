@@ -18,3 +18,15 @@ spec:
   - hosts:
     - harmikkelhatpaa.birchen.tech
     secretName: harmikkelhatpaa.birchen.tech
+
+  certificate:
+    harmikkelhatpaa.birchen.tech:
+      namespace: funprojects
+      spec:
+        secretName: harmikkelhatpaa.birchen.tech
+        issuerRef:
+          name: letsencrypt-prod
+          kind: ClusterIssuer
+          group: cert-manager.io
+        dnsNames:
+          - harmikkelhatpaa.birchen.tech
