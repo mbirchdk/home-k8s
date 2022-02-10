@@ -1,5 +1,5 @@
 {{- if .Values.issuers.letsencrypt.enabled }}
-apiVersion: cert-manager.io/v1
+apiVersion: cert-manager.io/v1alpha2
 kind: ClusterIssuer
 metadata:
   name: letsencrypt-prod
