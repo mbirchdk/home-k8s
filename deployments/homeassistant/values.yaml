@@ -1,12 +1,8 @@
-homeassistant: 
-  certificate:
-    home.birchen.tech:
-      namespace: homeapps
-      spec:
-        secretName: home.birchen.tech
-        issuerRef:
-          name: letsencrypt-prod
-          kind: ClusterIssuer
-          group: cert-manager.io
-        dnsNames:
-          - home.birchen.tech
+certificate:
+  enabled: true
+  name: home.birchen.tech
+  dnsNames:
+    - home.birchen.tech
+  issuer:
+    kind: ClusterIssuer
+    name: letsencrypt-prod

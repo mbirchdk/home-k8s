@@ -1,12 +1,9 @@
-homeassistant: 
-  certificate:
-    mbirch.dk:
-      namespace: mbirchdk
-      spec:
-        secretName: mbirch.dk
-        issuerRef:
-          name: letsencrypt-prod
-          kind: ClusterIssuer
-          group: cert-manager.io
-        dnsNames:
-          - mbirch.dk
+
+certificate:
+  enabled: true
+  name: mbirch.dk
+  dnsNames:
+    - mbirch.dk
+  issuer:
+    kind: ClusterIssuer
+    name: letsencrypt-prod
