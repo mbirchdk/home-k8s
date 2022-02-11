@@ -3,16 +3,16 @@ longhorn:
     defaultReplicaCount: 2  
   ingress:
     enabled: true
-    host: longhorn.birchen.tech
+    host: longhorn.home.birchen.tech
     tls: true
-    tlsSecret: longhorn.birchen.tech
+    tlsSecret: longhorn.home.birchen.tech
     annotations:
-      nginx.ingress.kubernetes.io/whitelist-source-range: "85.184.157.184"
+      nginx.ingress.kubernetes.io/whitelist-source-range: 192.168.0.0/24,85.184.157.184
 certificate:
   enabled: true
-  name: longhorn.birchen.tech
+  name: longhorn.home.birchen.tech
   dnsNames:
-    - longhorn.birchen.tech
+    - longhorn.home.birchen.tech
   issuer:
     kind: ClusterIssuer
     name: letsencrypt-prod
