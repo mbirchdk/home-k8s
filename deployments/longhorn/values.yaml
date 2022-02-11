@@ -7,7 +7,7 @@ longhorn:
     tls: true
     tlsSecret: longhorn.birchen.tech
     annotations:
-      nginx.ingress.kubernetes.io/whitelist-source-range: 10.10.0.0/20,10.0.0.0/20,192.168.0.0/24,85.184.157.184
+      nginx.ingress.kubernetes.io/whitelist-source-range: 10.10.0.0/20,10.0.0.0/20,192.168.86.0/24,85.184.157.184
 certificate:
   enabled: true
   name: longhorn.birchen.tech
