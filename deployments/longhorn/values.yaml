@@ -1,0 +1,18 @@
+longhorn:    
+  ingress:
+    enabled: true
+    host: longhorn.birchen.tech
+    tls: true
+    tlsSecret: longhorn.birchen.tech
+    annotations:
+      ingress.kubernetes.io/whitelist-source-range: "85.184.157.184"
+certificate:
+  enabled: true
+  name: longhorn.birchen.tech
+  dnsNames:
+    - longhorn.birchen.tech
+  issuer:
+    kind: ClusterIssuer
+    name: letsencrypt-prod
+
+  
