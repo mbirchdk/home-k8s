@@ -4,7 +4,7 @@ metadata:
   labels:
     app.kubernetes.io/name: livescorerapi
   name: livescorerapi
-  namespace: funprojects
+  namespace: homeapps
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
