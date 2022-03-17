@@ -11,14 +11,9 @@ network:
     version: 2
     wifis:
         wlan0:
-            addresses:
-                - 192.168.86.71/24
-            gateway4: 192.168.86.1
-            nameservers:
-                addresses: [8.8.8.8, 8.8.4.4]
-            optional: true
             access-points:
-                WIFI_HERE:
-                    password: PASS_HERE
+                WIFISSD_HERE:
+                    password: somePassword
             dhcp4: true
             optional: true
+
