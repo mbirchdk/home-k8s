@@ -8,7 +8,7 @@ If you haven’t already done so, add an A record to Cloudflare that points to y
 ## step 3)
 Go to templates/ddclient-secret.yaml and change:
 
-zone — your domain name like example.com \
+zone — your domain name like example.com (not subdomain!) \
 login — your Cloudflare account email address \
 password — your global API key from under API Tokens on your Cloudflare profile \
 the line beneath password — full domain name to keep updated, including subdomain like home.example.com
