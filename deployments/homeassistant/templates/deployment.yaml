@@ -15,6 +15,7 @@ spec:
       labels:
         app.kubernetes.io/name: home-assistant
     spec:
+      hostNetwork: true
       volumes:
       - name: configfolder
         hostPath:
