@@ -32,3 +32,4 @@ l. Indsæt public key under /.ssh/authorized-keys)
 l. kør rke -up
 l. installér helm på master (https://helm.sh/docs/intro/install/)
 l. installér rancher ui  (https://rancher.com/docs/rancher/v2.x/en/installation/install-rancher-on-k8s/)
+1. Omdøb kube_config_cluster.yml til "config" og placer filen her ~/.kube/
