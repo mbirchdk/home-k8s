@@ -1,0 +1,7 @@
+issuers:
+  letsencrypt:
+    enabled: true
+    email: mikkel@mbirch.dk
+
+cert-manager:
+  installCRDs: true
