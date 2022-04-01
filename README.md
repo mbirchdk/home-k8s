@@ -34,6 +34,18 @@ l. installér helm på master (https://helm.sh/docs/intro/install/)
 l. installér rancher ui  (https://rancher.com/docs/rancher/v2.x/en/installation/install-rancher-on-k8s/)
 1. Kør kommando `cp kube_config_cluster.yml ~/.kube/config`
 
+# sealed secrets
+## Install homebrew
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+# ddns
+When setting up ddns, 
+
+
+
+
+
 # Problems?
 
 ## Operation not supported:

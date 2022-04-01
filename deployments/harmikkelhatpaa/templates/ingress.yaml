@@ -1,10 +1,10 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
-annotations:
-  cert-manager.io/cluster-issuer: "letsencrypt-prod" 
 metadata:
   name: harmikkelhatpaa
   namespace: funprojects
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod" 
 spec:
   rules:
   - host: harmikkelhatpaa.birchen.tech
