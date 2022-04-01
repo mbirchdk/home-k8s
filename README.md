@@ -33,3 +33,9 @@ l. kør rke -up
 l. installér helm på master (https://helm.sh/docs/intro/install/)
 l. installér rancher ui  (https://rancher.com/docs/rancher/v2.x/en/installation/install-rancher-on-k8s/)
 1. Kør kommando `cp kube_config_cluster.yml ~/.kube/config`
+
+# Problems?
+
+## Operation not supported:
+Hvis CNI (flannel, calico etc fejler) med "Operation not supported" i pod'en, så kør kommando;
+`sudo apt install linux-modules-extra-raspi && reboot`
