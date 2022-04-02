@@ -25,7 +25,7 @@ spec:
           path: /home/ubuntu/media
       containers:
       - name: home-assistant
-        image: homeassistant/home-assistant:2021.11
+        image: homeassistant/home-assistant:stable
         imagePullPolicy: IfNotPresent
         securityContext:
           privileged: true
