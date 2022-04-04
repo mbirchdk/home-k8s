@@ -23,6 +23,9 @@ spec:
       - name: mediafolder
         hostPath:
           path: /home/ubuntu/media
+15    - name: footballsensors
+16      configMap:
+17        name: footballsensors
       containers:
       - name: home-assistant
         image: homeassistant/home-assistant:stable
@@ -38,5 +41,7 @@ spec:
           name: configfolder
         - mountPath: /media 
           name: mediafolder
+        - mountPath: /config/sensors/footballsensors.yaml
+          name: footballsensors
 
       
