@@ -3,39 +3,8 @@ kind: ConfigMap
 metadata:
   name: footballsensors
   namespace: homeassistant
-data:
-  agf_football.yml: |
-            # Homescore
-            - platform: rest
-              resource: http://livescorerapi/matches/live?Team=agf
-              value_template: "{{ value_json[0].homeScore }}"
-              name: "AGF - home"
-              json_attributes_path: "$.[0]"
-              json_attributes:
-                - homeTeam
-                - homeScore
+data: 
+  {{- with .Values.footballsensors }}
+    {{- toYaml . | nindent 8 }}
+  {{- end }}
 
-            # Awayscore
-            - platform: rest
-              resource: http://livescorerapi/matches/live?Team=agf
-              value_template: "{{ value_json[0].awayScore }}"
-              name: "AGF - away"
-              json_attributes_path: "$.[0]"
-              json_attributes:
-                - awayTeam
-                - awayScore
-
-            # Time
-            - platform: rest
-              resource: http://livescorerapi/matches/live?Team=agf
-              value_template: "{{ value_json[0].minute }}"
-              name: "AGF - time"
-              json_attributes_path: "$.[0]"
-              json_attributes:
-                - homeTeam
-                - awayTeam
-                - homeScore
-                - awayScore
-                - score
-                - minute
-                - matchStatus
