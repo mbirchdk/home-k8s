@@ -3,7 +3,7 @@ argoApps:
   repoUrl: https://github.com/mbirchdk/home-k8s.git
   namespace: default
   project: default
-  namespaceArgo: default
+  namespaceArgo: argocd
   
   
   applications:
