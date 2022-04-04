@@ -20,7 +20,7 @@ argo-cd:
     image:
       repository: baloisemichaelmuehlebach/argocd-applicationset
       tag: v0.4.1
-      
+
   controller:
     metrics:
       enabled: true
@@ -29,6 +29,10 @@ argo-cd:
           prometheus.io/scrape: true
           prometheus.io/path: /metrics
           prometheus.io/port: 8082
+  redis:
+   image:
+     tag: '6.2.4'
+     
   server:
     certificate:
       domain: argo.birchen.tech
@@ -44,6 +48,7 @@ argo-cd:
           prometheus.io/scrape: true
           prometheus.io/path: /metrics
           prometheus.io/port: 8083
+  
     ingress:
       enabled: true
       https: true
