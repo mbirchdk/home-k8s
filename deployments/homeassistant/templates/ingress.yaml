@@ -3,7 +3,7 @@ kind: Ingress
 
 metadata:
   name: homeassistant
-  namespace: homeapps
+  namespace: homeassistant
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-prod" 
 spec:

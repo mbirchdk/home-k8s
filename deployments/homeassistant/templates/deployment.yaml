@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: home-assistant
-  namespace: homeapps
+  namespace: homeassistant
 spec:
   replicas: 1
   selector:

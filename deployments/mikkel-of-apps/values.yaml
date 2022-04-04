@@ -6,6 +6,21 @@ argoApps:
   namespaceArgo: argocd
   
   applications:
+
+    sealedsecret:
+      path: deployments/sealedSecret-arm
+      targetRevision: main
+      valueFiles:
+        - values.yaml
+      namespace: sealedsecret
+    
+    longhorn:
+      path: deployments/longhorn
+      targetRevision: main
+      valueFiles:
+        - values.yaml
+      namespace: longhorn-system
+
     mbirchdk:
       path: deployments/mbirchdk
       targetRevision: main
@@ -21,13 +36,12 @@ argoApps:
       namespace: cert-manager
 
     harmikkelhatpaa:
-      project: funprojects
       path: deployments/harmikkelhatpaa
       targetRevision: main
       valueFiles:
         - values.yaml
       namespace: funprojects
-    
+
     homeassistant:
       path: deployments/homeassistant
       targetRevision: main
@@ -35,12 +49,12 @@ argoApps:
         - values.yaml
       namespace: homeassistant
 
-    sealedsecret:
-      path: deployments/sealedSecret-arm
+    livescorerapi:
+      path: deployments/livescorerapi
       targetRevision: main
       valueFiles:
         - values.yaml
-      namespace: sealedsecret
+      namespace: homeassistant
 
   projects:
     mikkel:
@@ -58,5 +72,8 @@ argoApps:
           server: https://kubernetes.default.svc
         - namespace: sealedsecret
           server: https://kubernetes.default.svc
+        - namespace: longhorn-system
+          server: https://kubernetes.default.svc
+          
 
 
