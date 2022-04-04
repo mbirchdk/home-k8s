@@ -22,7 +22,6 @@ spec:
       labels:
         app.kubernetes.io/name: livescorerapi
     spec:
-      hostNetwork: true
       containers:
       - image: mbirch/livescorerapi:dev
         imagePullPolicy: Always
