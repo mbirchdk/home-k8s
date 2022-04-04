@@ -18,7 +18,8 @@ argo-cd:
   
   applicationSet:
     image:
-      repository: baloisemichaelmuehlebach/argocd-applicationset:v0.4.1
+      repository: baloisemichaelmuehlebach/argocd-applicationset
+      tag: v0.4.1
       
   controller:
     metrics:
