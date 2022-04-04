@@ -42,6 +42,8 @@ l. installér rancher ui  (https://rancher.com/docs/rancher/v2.x/en/installation
 # ddns
 When setting up ddns, 
 
+deployments/ddns/templates/ddclient-secret.yaml  
+
 
 
 

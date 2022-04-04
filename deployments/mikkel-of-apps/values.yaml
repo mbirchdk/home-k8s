@@ -1,0 +1,24 @@
+argoApps:
+  server: https://kubernetes.default.svc
+  repoUrl: https://github.com/mbirchdk/home-k8s.git
+  namespace: infrastructure
+  project: infrastructure
+  namespaceArgo: infrastructure
+  
+  
+  applications:
+    mbirchdk:
+      path: deployments/mbirchdk
+      targetRevision: main
+      valueFiles:
+        - values.yaml
+      namespace: mbirchdk
+
+  projects:
+    mbirchdk:
+      description: mbirch.dk hjemmeside
+      sources:
+        - https://github.com/mbirchdk/home-k8s.git
+      destinations:
+        - namespace: mbirchdk
+          server: https://kubernetes.default.svc

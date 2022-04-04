@@ -1,0 +1,7 @@
+apiVersion: v1
+name: mikkel-of-apps
+version: 1.0.0
+dependencies:
+  - name: argoApps
+    version: 1.0.8
+    repository: https://raw.githubusercontent.com/KvalitetsIT/helm-repo/master/
