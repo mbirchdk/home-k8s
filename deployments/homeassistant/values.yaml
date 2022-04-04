@@ -1,5 +1,5 @@
 footballsensors:
-  agf_football.yml: |
+  agf_football.yaml: |
       # Homescore
       - platform: rest
         resource: http://livescorerapi/matches/live?Team=agf
