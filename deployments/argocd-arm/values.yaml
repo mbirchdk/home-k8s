@@ -15,6 +15,11 @@ argo-cd:
           prometheus.io/scrape: true
           prometheus.io/path: /metrics
           prometheus.io/port: 8084
+  
+  applicationSet:
+    image:
+      repository: baloisemichaelmuehlebach/argocd-applicationset:v0.4.1
+      
   controller:
     metrics:
       enabled: true
@@ -50,3 +55,6 @@ argo-cd:
         - secretName: argo.birchen.tech
           hosts:
            - argo.birchen.tech
+
+
+           
