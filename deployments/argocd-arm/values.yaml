@@ -33,8 +33,6 @@ argo-cd:
     certificate:
       domain: argo.birchen.tech
       enabled: false
-    extraArgs:
-      - --insecure
     config:
       users.anonymous.enabled: "false"
     metrics:
