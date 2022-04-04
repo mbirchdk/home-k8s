@@ -2,9 +2,8 @@ argoApps:
   server: https://kubernetes.default.svc
   repoUrl: https://github.com/mbirchdk/home-k8s.git
   namespace: default
-  project: default
+  project: mikkel
   namespaceArgo: argocd
-  
   
   applications:
     mbirchdk:
@@ -44,44 +43,20 @@ argoApps:
       namespace: sealedsecret
 
   projects:
-    mbirchdk:
-      description: mbirch.dk hjemmeside
+    mikkel:
+      description: apps belonging to mikkel
       sources:
         - https://github.com/mbirchdk/home-k8s.git
       destinations:
         - namespace: mbirchdk
           server: https://kubernetes.default.svc
-
-    cert-manager:
-      description: cert manager
-      sources:
-        - https://github.com/mbirchdk/home-k8s.git
-      destinations:
         - namespace: cert-manager
           server: https://kubernetes.default.svc
-        - namespace: kube-system
-          server: https://kubernetes.default.svc
-    
-    funprojects:
-      description: projects for fun
-      sources:
-        - https://github.com/mbirchdk/home-k8s.git
-      destinations:
         - namespace: funprojects
           server: https://kubernetes.default.svc
-    
-    homeassistant:
-      description: smart control for home
-      sources:
-        - https://github.com/mbirchdk/home-k8s.git
-      destinations:
         - namespace: homeassistant
           server: https://kubernetes.default.svc
-    
-    sealedsecret:
-      description: safe storage of secrets
-      sources:
-        - https://github.com/mbirchdk/home-k8s.git
-      destinations:
         - namespace: sealedsecret
           server: https://kubernetes.default.svc
+
+
