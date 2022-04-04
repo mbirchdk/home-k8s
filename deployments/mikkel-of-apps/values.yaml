@@ -6,13 +6,6 @@ argoApps:
   namespaceArgo: argocd
   
   applications:
-
-    sealedsecret:
-      path: deployments/sealedSecret-arm
-      targetRevision: main
-      valueFiles:
-        - values.yaml
-      namespace: sealedsecret
     
     longhorn:
       path: deployments/longhorn
