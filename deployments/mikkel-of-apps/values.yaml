@@ -13,13 +13,34 @@ argoApps:
       valueFiles:
         - values.yaml
       namespace: mbirchdk
-      
+
     cert-manager:
       path: deployments/cert-manager-arm
       targetRevision: main
       valueFiles:
         - values.yaml
       namespace: cert-manager
+
+    harmikkelhatpaa:
+      path: deployments/harmikkelhatpaa
+      targetRevision: main
+      valueFiles:
+        - values.yaml
+      namespace: funprojects
+    
+    homeassistant:
+      path: deployments/homeassistant
+      targetRevision: main
+      valueFiles:
+        - values.yaml
+      namespace: homeassistant
+
+    sealedsecret:
+      path: deployments/sealedSecret-arm
+      targetRevision: main
+      valueFiles:
+        - values.yaml
+      namespace: sealedsecret
 
   projects:
     mbirchdk:
@@ -36,4 +57,30 @@ argoApps:
         - https://github.com/mbirchdk/home-k8s.git
       destinations:
         - namespace: cert-manager
+          server: https://kubernetes.default.svc
+        - namespace: kube-system
+          server: https://kubernetes.default.svc
+    
+    funprojects:
+      description: projects for fun
+      sources:
+        - https://github.com/mbirchdk/home-k8s.git
+      destinations:
+        - namespace: funprojects
+          server: https://kubernetes.default.svc
+    
+    homeassistant:
+      description: smart control for home
+      sources:
+        - https://github.com/mbirchdk/home-k8s.git
+      destinations:
+        - namespace: homeassistant
+          server: https://kubernetes.default.svc
+    
+    sealedsecret:
+      description: safe storage of secrets
+      sources:
+        - https://github.com/mbirchdk/home-k8s.git
+      destinations:
+        - namespace: sealedsecret
           server: https://kubernetes.default.svc
