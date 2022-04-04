@@ -22,6 +22,7 @@ argoApps:
       namespace: cert-manager
 
     harmikkelhatpaa:
+      project: funprojects
       path: deployments/harmikkelhatpaa
       targetRevision: main
       valueFiles:
