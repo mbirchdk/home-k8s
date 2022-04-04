@@ -1,9 +1,9 @@
 argoApps:
   server: https://kubernetes.default.svc
   repoUrl: https://github.com/mbirchdk/home-k8s.git
-  namespace: infrastructure
-  project: infrastructure
-  namespaceArgo: infrastructure
+  namespace: default
+  project: default
+  namespaceArgo: default
   
   
   applications:
