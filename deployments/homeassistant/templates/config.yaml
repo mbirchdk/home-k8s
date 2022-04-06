@@ -5,26 +5,11 @@ metadata:
   namespace: homeassistant
 data: 
   configuration.yaml: |
+      {{- with .Values.configuration }}
+        {{- toYaml . | nindent 6 }}
+      {{- end }}
+
       # Configure a default setup of Home Assistant (frontend, api, etc)
-      default_config:
-
-      mobile_app:
-
-      http:
-        use_x_forwarded_for: true
-        trusted_proxies: 
-          - "10.0.0.0/8"
-          - "192.168.86.72"
-        ip_ban_enabled: true
-        login_attempts_threshold: 5
-
-      homeassistant:
-        external_url: "https://home.birchen.tech:443"
-
-      # Text to speech
-      tts:
-        - platform: google_translate
-
       sensor: !include_dir_merge_list sensors/
       group: !include groups.yaml
       automation: !include automations.yaml
@@ -34,29 +19,4 @@ data:
       frontend:    
         themes: !include_dir_merge_named themes
 
-      {{- with .Values.configuration }}
-        {{- toYaml . | nindent 6 }}
-      {{- end }}
       
-
-      # Alarm
-      alarm_control_panel:
-        - platform: manual
-          name: House Alarm
-          arming_time: 30
-          delay_time: 20
-          trigger_time: 4
-          disarmed:
-            trigger_time: 0
-          armed_home:
-            arming_time: 0
-            delay_time: 0
-
-      # LG TV
-      webostv:
-        - host: 192.168.86.174
-          customize:
-            sources:
-              - youtube
-              - netflix
-              - disneyplus
