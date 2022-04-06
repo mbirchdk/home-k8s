@@ -48,6 +48,7 @@ argoApps:
       valueFiles:
         - football-sensor-values.yaml
         - configuration-values.yaml
+        - secrets-values.yaml
       namespace: homeassistant
 
     livescorerapi:
