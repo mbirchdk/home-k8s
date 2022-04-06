@@ -11,6 +11,7 @@ data:
 
       # Configure a default setup of Home Assistant (frontend, api, etc)
       sensor: !include_dir_merge_list sensors/
+      secret: !include_dir_merge_list secrets/
       group: !include groups.yaml
       automation: !include automations.yaml
       script: !include scripts.yaml
