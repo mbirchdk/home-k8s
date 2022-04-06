@@ -31,7 +31,7 @@ spec:
           secretName: secrets
           items:
           - key: all
-            path: all.yaml
+            path: secrets.yaml
       containers:
       - name: home-assistant
         image: homeassistant/home-assistant:stable
@@ -49,7 +49,8 @@ spec:
           name: mediafolder
         - mountPath: /config/sensors
           name: footballsensors-volume
-        - mountPath: /config/secrets
+        - mountPath: /config/secrets.yaml
           name: secrets-volume
+          subPath: secrets.yaml
 
       
