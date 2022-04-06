@@ -1,0 +1,14 @@
+configuration:
+
+  spotify:
+    client_id: 
+    client_secret: 
+
+  google_assistant:
+    project_id: 
+
+  nest:
+    client_id: 
+    client_secret: 
+    project_id: 
+    subscriber_id: 

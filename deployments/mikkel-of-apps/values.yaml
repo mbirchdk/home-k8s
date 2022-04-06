@@ -39,7 +39,8 @@ argoApps:
       path: deployments/homeassistant
       targetRevision: main
       valueFiles:
-        - values.yaml
+        - football-sensor-values.yaml
+        - configuration-values.yaml
       namespace: homeassistant
 
     livescorerapi:
