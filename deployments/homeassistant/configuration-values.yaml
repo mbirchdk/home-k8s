@@ -39,7 +39,7 @@ configuration:
     login_attempts_threshold: 5
 
   spotify:
-    client_id: "!secret client_id"
+    client_id: \!secret client_id
     client_secret: "!secret client_secret"
 
   google_assistant:
