@@ -27,14 +27,11 @@ spec:
         configMap:
           name: footballsensors
       - name: secrets-volume
-        projected:
-          sources:
-          - secret:
-              name: spotify-creds
-          - secret:
-              name: google-assistant-creds
-          - secret:
-              name: nest-creds
+        secret:
+          secretName: secrets
+          items:
+          - key: all
+            path: all.yaml
       containers:
       - name: home-assistant
         image: homeassistant/home-assistant:stable
