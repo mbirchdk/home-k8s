@@ -26,6 +26,9 @@ spec:
       - name: footballsensors-volume
         configMap:
           name: footballsensors
+      - name: configuration-volume
+        configMap:
+          name: configuration
       - name: secrets-volume
         secret:
           secretName: secrets
@@ -49,8 +52,11 @@ spec:
           name: mediafolder
         - mountPath: /config/sensors
           name: footballsensors-volume
-        - mountPath: /config/secrets.yaml
-          name: secrets-volume
-          subPath: secrets.yaml
+        - mountPath: /config/configuration.yaml
+          name: configuration-volume
+          subPath: configuration.yaml
+        #- mountPath: /config/secrets.yaml
+        #  name: secrets-volume
+        #  subPath: secrets.yaml
 
       

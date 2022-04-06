@@ -1,4 +1,4 @@
-configuration:
+configuration : 
   homeassistant:
     external_url: "https://home.birchen.tech:443"
 
@@ -39,15 +39,15 @@ configuration:
     login_attempts_threshold: 5
 
   spotify:
-    client_id: \!secret client_id
-    client_secret: "!secret client_secret"
+    client_id: !secret spotify.client_id
+    client_secret: !secret spotify.client_secret
 
   google_assistant:
-    project_id: "!secret project_id"
+    project_id: !secret google_assistant.project_id
 
   nest:
-    client_id: "!secret client_id"
-    client_secret: "!secret client_secret"
-    project_id: "!secret project_id"
-    subscriber_id: "!secret subscriber_id"
+    client_id: !secret nest.client_id
+    client_secret: !secret nest.client_secret
+    project_id: !secret nest.project_id
+    subscriber_id: !secret nest.subscriber_id
 
