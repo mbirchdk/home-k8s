@@ -29,7 +29,7 @@ spec:
       containers:
       - name: home-assistant
         image: homeassistant/home-assistant:stable
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         securityContext:
           privileged: true
         ports:
