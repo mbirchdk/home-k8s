@@ -65,7 +65,7 @@ pihole:
   serviceDhcp:
 
     # -- Generate a Service resource for DHCP traffic
-    enabled: true
+    enabled: false
 
     # -- `spec.type` for the DHCP Service
     type: NodePort
@@ -89,7 +89,7 @@ pihole:
     http:
 
       # -- Generate a service for HTTP traffic
-      enabled: true
+      enabled: false
 
       # -- The port of the web HTTP service
       port: 80
@@ -97,7 +97,7 @@ pihole:
     # -- Configuration for the HTTPS web interface listener
     https:
       # -- Generate a service for HTTPS traffic
-      enabled: true
+      enabled: false
 
       # -- The port of the web HTTPS service
       port: 443
@@ -123,7 +123,7 @@ pihole:
   # -- Configuration for the Ingress
   ingress:
     # -- Generate a Ingress resource
-    enabled: true
+    enabled: false
 
     # -- Specify an ingressClassName
     # ingressClassName: nginx
@@ -324,7 +324,7 @@ pihole:
   hostname: ""
 
   # -- should the container use host network
-  hostNetwork: "false"
+  hostNetwork: "true"
 
   # -- should container run in privileged mode
   privileged: "false"
