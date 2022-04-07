@@ -7,12 +7,12 @@ argoApps:
   
   applications:
     
-    #longhorn:
-    #  path: deployments/longhorn
-    #  targetRevision: main
-    #  valueFiles:
-    #    - values.yaml
-    #  namespace: longhorn-system
+    longhorn:
+      path: deployments/longhorn
+      targetRevision: main
+      valueFiles:
+        - values.yaml
+      namespace: longhorn-system
 
     pihole:
       path: deployments/pihole_raw
