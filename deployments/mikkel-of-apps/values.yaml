@@ -15,7 +15,7 @@ argoApps:
     #  namespace: longhorn-system
 
     pihole:
-      path: deployments/pihole
+      path: deployments/pihole_raw
       targetRevision: main
       valueFiles:
         - secrets-values.yaml
