@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - image: pihole/pihole:2022.04.2
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         name: pihole
         env:
         - name: TZ
