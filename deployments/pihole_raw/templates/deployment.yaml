@@ -19,6 +19,13 @@ spec:
       labels:
         app.kubernetes.io/name: pihole
     spec:
+      volumes:
+      - name: piehole-etc-volume
+        persistentVolumeClaim:
+          claimName: pihole-etc
+      - name: piehole-dnsmasq-volume
+        persistentVolumeClaim:
+          claimName: pihole-dnsmasq
       containers:
       - image: pihole/pihole:2022.04.2
         imagePullPolicy: IfNotPresent
@@ -37,6 +44,11 @@ spec:
             secretKeyRef:
               name: pihole-secret
               key: password
+        volumeMounts:
+        - name: piehole-etc-volume
+          mountPath: /etc/pihole/
+        - name: piehole-dnsmasq-volume
+          mountPath: /etc/dnsmasq.d/
         ports:
         - containerPort: 53
           hostPort: 53
