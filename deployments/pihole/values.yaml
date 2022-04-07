@@ -29,7 +29,7 @@ pihole:
 
   dnsHostPort:
     # -- set this to true to enable dnsHostPort
-    enabled: true
+    enabled: false
     # -- default port for this pod
     port: 53
 
@@ -315,10 +315,10 @@ pihole:
     # MAXDBDAYS: 14
 
   # -- port the container should use to expose HTTP traffic
-  webHttp: "80"
+  webHttp: "8000"
 
   # -- port the container should use to expose HTTPS traffic
-  webHttps: "443"
+  webHttps: "4433"
 
   # -- hostname of pod
   hostname: ""
