@@ -7,12 +7,19 @@ argoApps:
   
   applications:
     
-    longhorn:
-      path: deployments/longhorn
+    #longhorn:
+    #  path: deployments/longhorn
+    #  targetRevision: main
+    #  valueFiles:
+    #    - values.yaml
+    #  namespace: longhorn-system
+
+    pihole:
+      path: deployments/pihole
       targetRevision: main
       valueFiles:
-        - values.yaml
-      namespace: longhorn-system
+        - secrets-values.yaml
+      namespace: pihole
 
     sealedsecret:
       path: deployments/sealedSecret-arm
@@ -75,6 +82,8 @@ argoApps:
         - namespace: sealedsecret
           server: https://kubernetes.default.svc
         - namespace: longhorn-system
+          server: https://kubernetes.default.svc
+        - namespace: pihole
           server: https://kubernetes.default.svc
           
 
