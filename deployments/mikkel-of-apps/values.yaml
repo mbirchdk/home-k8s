@@ -19,6 +19,7 @@ argoApps:
       targetRevision: main
       valueFiles:
         - secrets-values.yaml
+        - values.yaml
       namespace: pihole
 
     sealedsecret:
