@@ -31,7 +31,7 @@ pihole:
     # -- set this to true to enable dnsHostPort
     enabled: false
     # -- default port for this pod
-    port: 53
+    port: 530
 
   # -- Configuration for the DNS service on port 53
   serviceDns:
