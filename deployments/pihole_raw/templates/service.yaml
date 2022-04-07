@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/name: pihole-svc
+    app.kubernetes.io/version: 2021.6.3
+  name: pihole-svc
+  namespace: pihole
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app.kubernetes.io/name: pihole
+  type: ClusterIP

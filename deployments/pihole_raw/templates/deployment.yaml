@@ -13,10 +13,7 @@ spec:
     matchLabels:
       app.kubernetes.io/name: pihole
   strategy:
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 0
-    type: RollingUpdate
+    type: Recreate
   template:
     metadata:
       labels:
@@ -35,6 +32,11 @@ spec:
           value: "149.112.112.112"
         - name: ServerIP
           value: 192.168.86.72
+        - name: WEBPASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: pihole-secret
+              key: password
         ports:
         - containerPort: 53
           hostPort: 53

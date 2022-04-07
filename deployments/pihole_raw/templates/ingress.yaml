@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+
+metadata:
+  name: pihole
+  namespace: pihole
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod" 
+spec:
+  rules:
+  - host: pihole.birchen.tech
+    http:
+      paths:
+      - backend:
+          service:
+            name: pihole-svc
+            port:
+              name: http
+        pathType: ImplementationSpecific
+  tls:
+  - hosts:
+    - pihole.birchen.tech
+    secretName: pihole.birchen.tech
+  
