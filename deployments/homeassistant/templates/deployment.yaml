@@ -25,7 +25,7 @@ spec:
           path: /home/ubuntu/media
       - name: footballsensors-volume
         configMap:
-          name: footballsensors
+          name: sensors
       - name: configuration-volume
         configMap:
           name: configuration

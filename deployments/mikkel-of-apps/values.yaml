@@ -54,7 +54,7 @@ argoApps:
       path: deployments/homeassistant
       targetRevision: main
       valueFiles:
-        - football-sensor-values.yaml
+        - sensors-values.yaml
         - configuration-values.yaml
         - secrets-values.yaml
       namespace: homeassistant

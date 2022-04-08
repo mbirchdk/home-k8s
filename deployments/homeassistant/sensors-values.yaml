@@ -1,4 +1,4 @@
-footballsensors:
+sensors:
   agf_football.yaml: |
       # Homescore
       - platform: rest
@@ -34,3 +34,7 @@ footballsensors:
           - score
           - minute
           - matchStatus
+  landroid.yaml: |
+      - platform: worxlandroid
+        host: 192.168.86.96
+        pin: 7268
