@@ -1,6 +1,6 @@
 longhorn:  
   defaultSettings:
-    defaultReplicaCount: 2  
+    defaultReplicaCount: 1
   ingress:
     enabled: true
     host: longhorn.birchen.tech
