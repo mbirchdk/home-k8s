@@ -44,6 +44,13 @@ argoApps:
         - secrets-values.yaml
       namespace: homeassistant
 
+    zigbee2mqtt:
+      path: deployments/zigbee2mqtt
+      targetRevision: main
+      valueFiles:
+        - values-all.yaml
+      namespace: homeassistant
+
     livescorerapi:
       path: deployments/livescorerapi
       targetRevision: main

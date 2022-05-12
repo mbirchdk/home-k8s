@@ -1,0 +1,19 @@
+zigbee2mqtt:
+  additionalVolumeMounts:
+    - name: usb
+      mountPath: /dev/ttyUSB0
+
+  additionalVolumes:
+    - name: usb
+      hostPath:
+        path: /dev/ttyUSB0
+
+  # -- zigbee2mqtt configuration settings.
+  # This will be copied into the container's persistent storage at first run only.
+  # Further configuration should be done in the application itself!
+  # See [project documentation](https://www.zigbee2mqtt.io/information/configuration.html) for more information.
+  # @default -- See values.yaml
+  config:
+    # These will be applied ONLY on first run
+    # Home Assistant integration (MQTT discovery)
+    homeassistant: true
