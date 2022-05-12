@@ -45,6 +45,8 @@ zigbee2mqtt:
     data:
       enabled: true
       mountPath: /data
+      accessMode: ReadWriteOnce
+      size: 1Gi
     # -- Configure a hostPathMount to mount a USB device in the container.
     # @default -- See values.yaml
     usb:
