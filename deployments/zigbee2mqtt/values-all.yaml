@@ -51,7 +51,7 @@ zigbee2mqtt:
     usb:
       enabled: true
       type: hostPath
-      hostPath: /dev/serial/by-id/usb-1a86_USB_Serial-if00-port0
+      hostPath: /dev/ttyUSB0
 
   # -- Affinity constraint rules to place the Pod on a specific node.
   # [[ref]](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity)
@@ -99,7 +99,7 @@ zigbee2mqtt:
     # USB / Serial settings
     serial:
       # Location of your zigbee device
-      port: /dev/serial/by-id/usb-1a86_USB_Serial-if00-port0
+      port: /dev/ttyUSB0
 
       # Optional: adapter type, not needed unless you are experiencing problems (options: zstack, deconz)
       # adapter: deconz
