@@ -14,14 +14,6 @@ argoApps:
         - values.yaml
       namespace: longhorn-system
 
-    pihole:
-      path: deployments/pihole
-      targetRevision: main
-      valueFiles:
-        - secrets-values.yaml
-        - values.yaml
-      namespace: pihole
-
     sealedsecret:
       path: deployments/sealedSecret-arm
       targetRevision: main
@@ -42,13 +34,6 @@ argoApps:
       valueFiles:
         - values.yaml
       namespace: cert-manager
-
-    harmikkelhatpaa:
-      path: deployments/harmikkelhatpaa
-      targetRevision: main
-      valueFiles:
-        - values.yaml
-      namespace: funprojects
 
     homeassistant:
       path: deployments/homeassistant
