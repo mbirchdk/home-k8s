@@ -50,7 +50,7 @@ zigbee2mqtt:
     # -- Configure a hostPathMount to mount a USB device in the container.
     # @default -- See values.yaml
     usb:
-      enabled: true
+      enabled: false
       type: hostPath
       hostPath: /dev/ttyUSB0
 
