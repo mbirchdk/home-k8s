@@ -21,6 +21,13 @@ argoApps:
         - values.yaml
       namespace: sealedsecret
 
+    openvpn-as:
+      path: deployments/open-vpn
+      targetRevision: main
+      valueFiles:
+        - values.yaml
+      namespace: vpn
+
     mbirchdk:
       path: deployments/mbirchdk
       targetRevision: main
@@ -77,6 +84,8 @@ argoApps:
         - namespace: longhorn-system
           server: https://kubernetes.default.svc
         - namespace: pihole
+          server: https://kubernetes.default.svc
+        - namespace: vpn
           server: https://kubernetes.default.svc
           
 

@@ -1,0 +1,136 @@
+
+openvpn-as:
+
+  # Default values for openvpn-as.
+  # This is a YAML-formatted file.
+  # Declare variables to be passed into your templates.
+
+  replicaCount: 1
+
+  openvpn:
+    timezone: Europe/Copenhagen
+    ports:
+      # -- Admin GUI port
+      admin: 943
+      # -- Client GUI port
+      gui: 944
+      # -- VPN TCP port
+      tcp: 9443
+      # -- VPN UDP port
+      udp: 1194
+    # -- Config settings to apply to the openvpn-as server
+    config:
+      vpn.client.routing.reroute_gw: "false"
+      vpn.client.routing.reroute_dns: "false"
+      host.name: vpn.birchen.tech
+
+    admin:
+      # -- Username for the initial super_user. Cannot be `admin`
+      user: altmin
+      # -- Password for the initial super_user
+      password: passw0rd
+    # -- (list) Additional users to create when non-existent `[{"user":"someuser","password":"somepassword"}]`
+    users:
+      # - user: someuser
+      #   password: somepassword
+
+  persistence:
+    # -- Enable persistence using PVC
+    enabled: true
+    # -- PVC Storage Class for volume
+    storageClass: longhorn
+    # -- Annotations for the PVC
+    annotations: {}
+    # -- PVC Access Mode for volume
+    accessMode: "ReadWriteOnce"
+    # -- PVC Storage Request for volume
+    size: "8Gi"
+    # -- used when PVC already created before install
+    existingClaimName:
+    # -- Indicate another subpath for backup storage
+    backupSubpath: backup
+    # -- Indicate another subpath for licenses storage
+    licensesSubpath: licenses
+
+  image:
+    # -- Image repository
+    repository: ghcr.io/linuxserver/openvpn-as
+    # -- Image pull policy
+    pullPolicy: IfNotPresent
+
+  serviceAccount:
+    # -- Create ServiceAccount
+    create: true
+    annotations: {}
+
+  # -- Map of annotations to add to the pods
+  podAnnotations: {}
+
+  podSecurityContext:
+    # -- Group ID for the pod
+    fsGroup: 1000
+
+  # -- Security Context
+  securityContext:
+    capabilities:
+      add: ["NET_ADMIN"]
+
+  service:
+    # -- Kubernetes Service type for VPN, generally this is "LoadBalancer"
+    type: ClusterIP
+    tcp:
+      enabled: true
+    udp:
+      enabled: true
+    admin:
+      # -- Kubernetes Service type for Admin GUI
+      type: ClusterIP
+    gui:
+      # -- Kubernetes Service type for Client GUI
+      type: ClusterIP
+
+  ingress:
+    gui:
+      # -- Enable ingress resource for Client GUI
+      enabled: true
+      # -- Ingress annotations
+      annotations: 
+        cert-manager.io/cluster-issuer: "letsencrypt-prod" 
+        # kubernetes.io/ingress.class: nginx
+        # kubernetes.io/tls-acme: "true"
+      # -- Host for the Client GUI
+      hostName: clientvpn.birchen.tech
+      tls:
+        # -- Enable TLS configuration for the hostname defined at ingress.gui.hostname parameter
+        enabled: true
+        secretName: clientvpn.birchen.tech
+    admin:
+      # -- Enable ingress resource for Admin GUI
+      enabled: true
+      # -- Ingress annotations
+      annotations: 
+        cert-manager.io/cluster-issuer: "letsencrypt-prod" 
+        # kubernetes.io/ingress.class: nginx
+        # kubernetes.io/tls-acme: "true"
+      # -- Host for the Admin GUI
+      hostName: adminvpn.birchen.tech
+      tls:
+        # -- Enable TLS configuration for the hostname defined at ingress.admin.hostname parameter
+        enabled: true
+        secretName: adminvpn.birchen.tech
+
+  # -- CPU/Memory resource requests/limits
+  resources: {}
+    # limits:
+    #   cpu: 100m
+    #   memory: 128Mi
+    # requests:
+    #   cpu: 100m
+    #   memory: 128Mi
+
+  # -- Node labels for pod assignment
+  nodeSelector: {}
+  # -- Toleration labels for pod assignment
+  tolerations: []
+  # -- Affinity labels for pod assignment
+  affinity: {}
