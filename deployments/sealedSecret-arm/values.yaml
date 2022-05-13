@@ -4,8 +4,7 @@ sealed-secrets:
     annotations:
       kubernetes.io/ingress.class: nginx
       cert-manager.io/cluster-issuer: "letsencrypt-prod" 
-    hosts:
-      - sealed-secrets.birchen.tech
+    hostname: sealed-secrets.birchen.tech
     path: /v1/cert.pem
     tls:
       - hosts:
