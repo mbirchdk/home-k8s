@@ -20,13 +20,13 @@ argoApps:
       valueFiles:
         - values.yaml
       namespace: sealedsecret
-
-    wireguard:
-      path: deployments/wireguard
+    
+    ddns:
+      path: deployments/ddns
       targetRevision: main
       valueFiles:
         - values.yaml
-      namespace: vpn
+      namespace: ddns
 
     mbirchdk:
       path: deployments/mbirchdk
@@ -86,6 +86,8 @@ argoApps:
         - namespace: pihole
           server: https://kubernetes.default.svc
         - namespace: vpn
+          server: https://kubernetes.default.svc
+        - namespace: ddns
           server: https://kubernetes.default.svc
           
 
