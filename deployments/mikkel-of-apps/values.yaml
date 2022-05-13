@@ -21,8 +21,8 @@ argoApps:
         - values.yaml
       namespace: sealedsecret
 
-    openvpn-as:
-      path: deployments/open-vpn
+    openvpn:
+      path: deployments/openvpn
       targetRevision: main
       valueFiles:
         - values.yaml

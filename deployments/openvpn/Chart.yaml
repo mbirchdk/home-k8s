@@ -1,0 +1,7 @@
+apiVersion: v2
+name: openvpn
+version: 3.12.4
+dependencies:
+  - name: openvpn
+    version: 3.12.4
+    repository: https://cloudnativeapp.github.io/charts/curated/
