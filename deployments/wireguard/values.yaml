@@ -52,8 +52,7 @@ wireguard:
       enabled: true
       annotations:
         cert-manager.io/cluster-issuer: "letsencrypt-prod"
-      rules:
-      - host: vpn.mbirch.dk
+      host: vpn.mbirch.dk
       tls:
       - hosts:
         - vpn.mbirch.dk
