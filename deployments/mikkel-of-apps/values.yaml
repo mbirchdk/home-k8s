@@ -21,8 +21,8 @@ argoApps:
         - values.yaml
       namespace: sealedsecret
 
-    openvpn:
-      path: deployments/openvpn
+    wireguard:
+      path: deployments/wireguard
       targetRevision: main
       valueFiles:
         - values.yaml
