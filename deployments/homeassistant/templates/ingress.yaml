@@ -8,7 +8,7 @@ metadata:
     cert-manager.io/cluster-issuer: "letsencrypt-prod" 
 spec:
   rules:
-  - host: home.birchen.tech
+  - host: home.mbirch.dk
     http:
       paths:
       - backend:
@@ -19,6 +19,6 @@ spec:
         pathType: ImplementationSpecific
   tls:
   - hosts:
-    - home.birchen.tech
-    secretName: home.birchen.tech
+    - home.mbirch.dk
+    secretName: home.mbirch.dk
     

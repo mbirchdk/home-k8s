@@ -1,6 +1,6 @@
 configuration : 
   homeassistant:
-    external_url: "https://home.birchen.tech:443"
+    external_url: "https://home.mbirch.dk:443"
 
   # Text to speech
   tts:
