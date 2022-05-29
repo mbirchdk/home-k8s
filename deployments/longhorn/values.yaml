@@ -3,9 +3,9 @@ longhorn:
     defaultReplicaCount: 1
   ingress:
     enabled: true
-    host: longhorn.birchen.tech
+    host: longhorn.mbirch.dk
     tls: true
-    tlsSecret: longhorn.birchen.tech
+    tlsSecret: longhorn.mbirch.dk
     annotations:
       cert-manager.io/cluster-issuer: "letsencrypt-prod" 
       nginx.ingress.kubernetes.io/whitelist-source-range: 10.10.0.0/20,10.0.0.0/20,192.168.86.0/24,85.184.157.184
