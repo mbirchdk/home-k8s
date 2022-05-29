@@ -31,7 +31,7 @@ argo-cd:
           prometheus.io/port: 8082
   server:
     certificate:
-      domain: argo.birchen.tech
+      domain: argo.mbirch.dk
       enabled: false
     extraArgs:
       - --insecure
@@ -51,11 +51,11 @@ argo-cd:
         cert-manager.io/cluster-issuer: "letsencrypt-prod" 
         kubernetes.io/ingress.class: nginx
       hosts:
-        - argo.birchen.tech
+        - argo.mbirch.dk
       tls:
-        - secretName: argo.birchen.tech
+        - secretName: argo.mbirch.dk
           hosts:
-           - argo.birchen.tech
+           - argo.mbirch.dk
 
 
            
