@@ -21,7 +21,6 @@ certificate:
         name: ca-issuer
         kind: ClusterIssuer
         group: cert-manager.io
-
 linkerd2:
   identity:
     issuer:
@@ -30,3 +29,5 @@ linkerd2:
           dfdf
         keyPEM: |
           sdfs
+  identityTrustAnchorsPEM: |
+    sfdf
