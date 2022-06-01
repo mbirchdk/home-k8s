@@ -1,4 +1,15 @@
 certificate:
+  linkerd-trust-anchor:
+    namespace: linkerd
+    spec:
+      secretName: linkerd-trust-anchor
+      duration: 87600h0m0s # ~10 years
+      renewBefore: 24h0m0s
+      commonName: linkerd-trust-anchor
+      issuerRef:
+        name: ca-issuer
+        kind: ClusterIssuer
+        group: cert-manager.io
   linkerd-identity-issuer:
     namespace: linkerd
     spec:
@@ -16,8 +27,6 @@ linkerd2:
     issuer:
       tls:
         crtPEM: |
-          refsecret
+          dfdf
         keyPEM: |
-          refsecret
-  identityTrustAnchorsPEM: |
-    refsecret
+          sdfs
