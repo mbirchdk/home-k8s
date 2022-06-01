@@ -1,0 +1,34 @@
+---
+{{- range $name, $value := .Values.certificate}}
+{{- if $.Capabilities.APIVersions.Has "cert-manager.io/v1" }}
+apiVersion: cert-manager.io/v1
+{{- else }}
+apiVersion: cert-manager.io/v1alpha2
+{{- end }}
+kind: Certificate
+metadata:
+  name: {{ $name }}
+  namespace: {{ $value.namespace }}
+spec:
+  secretName: {{ $value.spec.secretName }}
+  {{- if ($value.spec.duration) }}
+  duration: {{ $value.spec.duration }}
+  {{- end }}
+  {{- if ($value.spec.renewBefore) }}
+  renewBefore: {{ $value.spec.renewBefore }}
+  {{- end }}
+  {{- if ($value.spec.commonName) }}
+  commonName: {{ $value.spec.commonName }}
+  {{- end }}
+  issuerRef:
+    name: {{ $value.spec.issuerRef.name }}
+    kind: {{ $value.spec.issuerRef.kind }}
+    group: {{ $value.spec.issuerRef.group }}
+  {{- if ($value.spec.dnsNames) }}
+  dnsNames:
+    {{- range $value.spec.dnsNames }}
+    - {{ . }}
+    {{- end }}
+  {{- end }}
+---
+{{- end }}

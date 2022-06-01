@@ -1,0 +1,7 @@
+apiVersion: v1
+name: linkerd
+version: 2.11.2
+dependencies:
+  - name: linkerd2
+    version: 2.11.2
+    repository: https://helm.linkerd.io/stable

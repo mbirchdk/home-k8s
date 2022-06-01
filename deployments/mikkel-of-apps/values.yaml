@@ -14,6 +14,13 @@ argoApps:
         - values.yaml
       namespace: longhorn-system
 
+    linkerd:
+      path: deployments/linkerd
+      targetRevision: main
+      valueFiles:
+        - values.yaml
+      namespace: linkerd
+
     sealedsecret:
       path: deployments/sealedSecret-arm
       targetRevision: main
