@@ -7,7 +7,7 @@ certificate:
       renewBefore: 24h0m0s
       commonName: linkerd-trust-anchor
       issuerRef:
-        name: ca-issuer
+        name: letsencrypt-prod
         kind: ClusterIssuer
         group: cert-manager.io
   linkerd-identity-issuer:
@@ -18,7 +18,7 @@ certificate:
       renewBefore: 24h0m0s
       commonName: linkerd-identity-issuer
       issuerRef:
-        name: ca-issuer
+        name: letsencrypt-prod
         kind: ClusterIssuer
         group: cert-manager.io
 linkerd2:
