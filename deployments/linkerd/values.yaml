@@ -1,16 +1,3 @@
-certificate:
-  linkerd-trust-anchor:
-    namespace: linkerd
-    spec:
-      secretName: linkerd-trust-anchor
-      duration: 87600h0m0s # ~10 years
-      renewBefore: 24h0m0s
-      commonName: linkerd-trust-anchor
-      issuerRef:
-        name: ca-issuer
-        kind: ClusterIssuer
-        group: cert-manager.io
-
 linkerd2:
   installNamespace: false
   identity:
@@ -19,20 +6,14 @@ linkerd2:
     
   identityTrustAnchorsPEM: |
     -----BEGIN CERTIFICATE-----
-    MIIC9zCCAd+gAwIBAgIRAKAOFmIdeLJtgBl5RFmFzkYwDQYJKoZIhvcNAQELBQAw
-    FTETMBEGA1UEAxMKc2VsZnNpZ25lZDAeFw0yMjA2MDIxNTE3MjBaFw0zMjA1MzAx
-    NTE3MjBaMBUxEzARBgNVBAMTCnNlbGZzaWduZWQwggEiMA0GCSqGSIb3DQEBAQUA
-    A4IBDwAwggEKAoIBAQDD4MC9Exun/6wYekqIiQG0viKscr41cPzMPhdACkiyq8wp
-    HhIIppJCtoHz2URboDMwCN3hTgaAyhDrwBdqTaq2eLLt35lpk5mAJ+wN6VpXXq81
-    N69vDpUQ9uIBSdWoYmbi/hJcnCcNZXTt721Jk9wrfebWySvOLpcC2f8bS4hkgPo7
-    QA83+tA6jFeBweEtumYmEMR5+grUe2sRzs8ObZB3C/2srp4w6Af47fI4KYabu6UT
-    lt19tW02UA1CAmjDgv8i7Dyd/IqDc/t0P2ThPlE2HBhRKTPLSPQqDld+B5fZ+o+8
-    Dq71BidP73AHA55/0N75bB7xDnThZWGMndF1zROtAgMBAAGjQjBAMA4GA1UdDwEB
-    /wQEAwICpDAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBTe5OlqlH47dNbRJ5Mk
-    0V8v4fqcFTANBgkqhkiG9w0BAQsFAAOCAQEAqJEwloIQEcK7Fc/8ICn9QJvkN5x/
-    +ouX9lDpgXLbcZkTSOZ19EBZq4L7QlSEpq5/sXg3sl+9sJkiBrSpi5IMU5JnVO5y
-    xme1Qv68IgFm56UvlYCHOHxcj5Rm4bY0C2MuzvbrTAuYrD24Hrk//PxQHpThNP/q
-    k+7i/89nILludsrdjfe6OdTfKbJpqQnVbZc7C3NFoLYStknbUqlCqzz4hyOxWGds
-    DvKlGdC9S7k49EeHj3GBMqRXaWOj+A+3AfO3NSXvkcUM4SgSUKgrEKw5JBWEs0wG
-    dxUHMVr/3K9Qu0yf3rU7LECaEe1dor5ablfsCXkiw65MmU6x242YEiMkFQ==
+    MIIBjjCCATSgAwIBAgIRANCeTZ4VcwbQ4dg70FPQP0EwCgYIKoZIzj0EAwIwJTEj
+    MCEGA1UEAxMacm9vdC5saW5rZXJkLmNsdXN0ZXIubG9jYWwwHhcNMjIwNjAyMTYz
+    MzQxWhcNMjcwNjAxMTYzMzQxWjAlMSMwIQYDVQQDExpyb290LmxpbmtlcmQuY2x1
+    c3Rlci5sb2NhbDBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABEBbtOs0sCmoXfuQ
+    hMA8jfT+VdPOM5+5LZ6o+SWYruq6UuiiL04FJmWcuzEaVD/q21EkDnMvj2Q7ituG
+    xlUY7uejRTBDMA4GA1UdDwEB/wQEAwIBBjASBgNVHRMBAf8ECDAGAQH/AgEBMB0G
+    A1UdDgQWBBTPGfFcfNGl30OxFAnv4RcORWJYgzAKBggqhkjOPQQDAgNIADBFAiEA
+    l47X7C7KQdwIuwqcfJwkr0Jr76hz6BRkUldMpAX+aJ8CIBqHcSt6G8TVUPDqxVUJ
+    xuucvR7RUs0P2pK6wtAmQTEa
     -----END CERTIFICATE-----
+
