@@ -12,6 +12,8 @@ spec:
     type: Recreate
   template:
     metadata:
+      annotations:
+        linkerd.io/inject: enabled
       labels:
         app.kubernetes.io/name: home-assistant
     spec:
