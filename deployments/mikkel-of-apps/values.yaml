@@ -20,6 +20,13 @@ argoApps:
       valueFiles:
         - values.yaml
       namespace: linkerd
+      
+    linkerd-viz:
+      path: deployments/linkerd-viz
+      targetRevision: main
+      valueFiles:
+        - values.yaml
+      namespace: linkerd
 
     sealedsecret:
       path: deployments/sealedSecret-arm
