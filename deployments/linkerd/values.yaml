@@ -2,32 +2,11 @@ certificate:
   linkerd-trust-anchor:
     namespace: linkerd
     spec:
-      secretName: linkerd-trust-anchor
+      secretName: linkerd-trust-anchor-temp
       duration: 87600h0m0s # ~10 years
       renewBefore: 24h0m0s
-      commonName: linkerd-trust-anchor
+      commonName: linkerd-trust-anchor-temp
       issuerRef:
         name: letsencrypt-prod
         kind: ClusterIssuer
         group: cert-manager.io
-  linkerd-identity-issuer:
-    namespace: linkerd
-    spec:
-      secretName: linkerd-identity-issuer
-      duration: 87600h0m0s # ~10 years
-      renewBefore: 24h0m0s
-      commonName: linkerd-identity-issuer
-      issuerRef:
-        name: letsencrypt-prod
-        kind: ClusterIssuer
-        group: cert-manager.io
-linkerd2:
-  identity:
-    issuer:
-      tls:
-        crtPEM: |
-          dfdf
-        keyPEM: |
-          sdfs
-  identityTrustAnchorsPEM: |
-    sfdf
