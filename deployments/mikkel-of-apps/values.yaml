@@ -14,6 +14,13 @@ argoApps:
         - values.yaml
       namespace: longhorn-system
 
+    cluster-bootstrapping:
+      path: deployments/cluster-bootstrapping
+      targetRevision: main
+      valueFiles:
+        - values.yaml
+      namespace: default
+
     linkerd:
       path: deployments/linkerd
       targetRevision: main
