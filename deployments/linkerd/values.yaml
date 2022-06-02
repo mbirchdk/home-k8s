@@ -7,6 +7,6 @@ certificate:
       renewBefore: 24h0m0s
       commonName: linkerd-trust-anchor-temp
       issuerRef:
-        name: letsencrypt-prod
+        name: ca-issuer
         kind: ClusterIssuer
         group: cert-manager.io
