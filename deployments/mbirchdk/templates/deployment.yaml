@@ -3,8 +3,8 @@ kind: Deployment
 metadata:
   labels:
     app.kubernetes.io/name: mbirchwebsite
-  annotations:
-    linkerd.io/inject: enabled
+  annotations: {}
+    # linkerd.io/inject: enabled # hostbuilder cant handle
   name: mbirchwebsite
   namespace: mbirchdk
 spec:
