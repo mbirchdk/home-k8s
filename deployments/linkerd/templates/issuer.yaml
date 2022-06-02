@@ -5,7 +5,8 @@ metadata:
   name: linkerd-trust-anchor
   namespace: linkerd
 spec:
-  selfSigned: {}
+  ca:
+    secretName: linkerd-trust-anchor
 ---
 apiVersion: cert-manager.io/v1
 kind: Certificate
