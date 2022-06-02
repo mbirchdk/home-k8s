@@ -2,6 +2,10 @@ issuers:
   letsencrypt:
     enabled: true
     email: mikkel@mbirch.dk
-
+  selfsigned:
+    enabled: true
+    commonname: selfsigned
+    duration: 87600h0m0s
+    renewBefore: 360h0m0s
 cert-manager:
   installCRDs: true

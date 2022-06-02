@@ -3,7 +3,6 @@ apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
   name: selfsigned-issuer
-  namespace: infrastructure
 spec:
   selfSigned: {}
 ---
@@ -11,7 +10,6 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: ca-issuer
-  namespace: infrastructure
 spec:
   secretName: ca-issuer
   duration: {{ .Values.issuers.selfsigned.duration }}
@@ -27,7 +25,6 @@ apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
   name: ca-issuer
-  namespace: infrastructure
 spec:
   ca:
     secretName: ca-issuer
