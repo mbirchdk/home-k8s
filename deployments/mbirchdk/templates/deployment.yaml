@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   labels:
     app.kubernetes.io/name: mbirchwebsite
+  annotations:
+    linkerd.io/inject: enabled
   name: mbirchwebsite
   namespace: mbirchdk
 spec:
