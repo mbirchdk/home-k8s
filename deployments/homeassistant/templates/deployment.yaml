@@ -41,18 +41,6 @@ spec:
       - name: home-assistant
         image: homeassistant/home-assistant:stable
         imagePullPolicy: Always
-        livenessProbe:
-          httpGet:
-            path: /
-            port: 8123
-          initialDelaySeconds: 10
-          periodSeconds: 30
-        readinessProbe:
-          httpGet:
-            port: 8123
-            path: /
-          initialDelaySeconds: 60
-          periodSeconds: 30
         securityContext:
           privileged: true
         ports:
