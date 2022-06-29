@@ -1,4 +1,7 @@
 argo-cd:
+  global:
+    podAnnotations:
+      linkerd.io/inject: enabled
   installCRDs: false
   configs:
     secret:
