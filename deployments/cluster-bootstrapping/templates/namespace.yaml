@@ -3,6 +3,15 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: {{ $namespace }}
+  annotations: {}
+---
+{{- end }}
+
+{{- range $namespace := .Values.namespacesWithLinkerd }}
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ $namespace }}
   annotations:
     linkerd.io/inject: enabled
 ---

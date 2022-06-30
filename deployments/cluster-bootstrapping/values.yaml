@@ -1,10 +1,12 @@
 namespaces:
-- homeassistant
-- argocd
-- ddns
-- default
-- funprojects
-- ingress-nginx
-- longhorn-system
-- sealedsecret
-- mbirchdk
+  - homeassistant
+  - ddns
+  - default
+  - funprojects
+  - ingress-nginx
+  - longhorn-system
+  - sealedsecret
+
+namespacesWithLinkerd:
+  - argocd
+  - mbirchdk
