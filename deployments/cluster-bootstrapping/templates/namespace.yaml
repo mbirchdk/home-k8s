@@ -1,4 +1,4 @@
-{{- range $namespace := .Values.namespaces }}
+{{- range $namespace := .Values.namespacesWithLinkerd }}
 apiVersion: v1
 kind: Namespace
 metadata:
